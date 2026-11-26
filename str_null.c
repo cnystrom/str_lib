@@ -10,7 +10,7 @@ PUBLIC char *str_null_terminated(char *s, int num)
 {
 	char *p;
 
-	/* FIX (1.0, 2026): copy all num chars (the malloc is num + 1), not
+	/* FIX (1.1, 2026): copy all num chars (the malloc is num + 1), not
 	 * num - 1, stop at a NUL, and treat a negative num (a failed read()
 	 * passed straight in) as 0 instead of overflowing p. */
 	if (num < 0)

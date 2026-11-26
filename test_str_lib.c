@@ -43,7 +43,7 @@ int main(void)
 	CHECK(strcmp(buf, "abcdefg") == 0);
 
 	/* str_null_terminated: a NUL-terminated copy of the first num chars.
-	 * 1.0 fix: NewIO 0.12 kept only num - 1 chars, read past a buffer
+	 * 1.1 fix: NewIO 0.12 kept only num - 1 chars, read past a buffer
 	 * that has no NUL, and overflowed on a negative num. */
 	{
 		char raw[3] = { 'a', 'b', 'c' };	/* no NUL, as from read() */

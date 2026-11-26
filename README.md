@@ -1,6 +1,11 @@
 # str_lib: small C string helpers
 
-Version 1.0 (2026). Split from NewIO 0.12, https://github.com/cnystrom/newio
+Version 1.1 (2026). Split from NewIO 0.12, https://github.com/cnystrom/newio
+
+## Versions
+
+- **1.0:** original code as published in NewIO 0.12 (tag `v1.0`).
+- **1.1:** this release, with the fixes listed below. See `CHANGES.md`.
 
 str_lib is a handful of C string helpers from NewIO: trimming trailing
 whitespace, a counted-length copy into new memory, a plain `strlen`, and
@@ -18,7 +23,7 @@ From `str_lib.h`:
 | `size_t strlcpy(char *dst, const char *src, size_t siz)` | Bounded copy that always NUL terminates; returns `strlen(src)`. |
 | `size_t strlcat(char *dst, const char *src, size_t siz)` | Bounded append; returns the length it tried to create. |
 
-`str_lib_version.h` defines `STR_LIB_VERSION` ("1.0") and `STR_LIB_ORIGIN`.
+`str_lib_version.h` defines `STR_LIB_VERSION` ("1.1") and `STR_LIB_ORIGIN`.
 
 ## Dependencies
 
@@ -56,13 +61,13 @@ Contact: Chris Nystrom <cnystrom@gmail.com>
   implementations from c-libs (`misc_lib/strlcpy.c`, `misc_lib/strlcat.c`),
   with one change each: line 19 includes `"str_lib.h"` instead of
   `"misc_lib.h"`.
-- `str_null.c`: bug fix, see "Fixed in 1.0".
+- `str_null.c`: bug fix, see "Fixed in 1.1".
 - Removed two old personal contact lines (a web-log URL and a chat handle) from the file headers, at Chris's request (2026). The rest of each header and the authorship are unchanged, so header-area line numbers are 2 lower than in NewIO.
 - Added `str_lib_version.h`, `test_str_lib.c`, a `make test` target at the
   end of the `Makefile`, this README, `LICENSE` and `COPYING`.
 - Not copied: `archive.sh` (it uploaded tarballs to an old newio.org server).
 
-## Fixed in 1.0
+## Fixed in 1.1
 
 - **`str_null_terminated()` kept only `num - 1` characters** (`str_null.c:3`,
   `:13-23`). The intended contract is clear from the code and its NewIO
